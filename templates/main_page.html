@@ -12,45 +12,54 @@
   </head>
   <body>
     <div id="banner" class="container">
-      <h1 class="display-4">Hello, world!</h1>
-    </div>
-    <div class="container">
-      <form action="{{ url_for('process_inputs') }}" method="post">
-        <div class="form-group">
-          <label for="input_name">First Name</label>
-          <input type="text" class="form-control" name="input_name"  id="input_name" placeholder="Fred Flintstone">
-        </div>
-        <div class="form-group">
-          <label for="input_dropdown">Example select</label>
-          <select class="form-control" name="input_dropdown" id="input_dropdown">
-            <option>1 fish</option>
-            <option>2 fish</option>
-            <option>red fish</option>
-            <option>the spanish inquisition</option>
-            <option>blue fish</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="input_select">Example multiple select</label>
-          <select multiple class="form-control" name="input_select" id="input_select">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="input_freeform">Example textarea</label>
-          <textarea class="form-control" name="input_freeform" id="input_freeform" rows="3"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+      <h1 class="display-4">D&D Character Generator</h1>
     </div>
     <div class="container">
       {% if input_data %} {{ input_data }} {% endif %}
       <br />
       {% if output %} {{ output }} {% endif %}
+    </div>
+    <div class="container">
+      <form action="{{ url_for('process_inputs') }}" method="post">
+        <div class="form-group">
+          <label for="input_firstname">What is your first name?</label>
+          <input type="text" class="form-control" name="input_firstname"  id="input_firstname" placeholder="Fred">
+        </div>
+        <div class="form-group">
+          <label for="input_lastname">What is your last name?</label>
+          <input type="text" class="form-control" name="input_lastname"  id="input_lastname" placeholder="Flintstone">
+        </div>
+        <div class="form-group">
+        <div class="form-group">
+          <label for="input_petname">What is your favorite pet's name?</label>
+          <input type="text" class="form-control" name="input_petname"  id="input_petname" placeholder="Dino">
+        </div>
+        <div class="form-group">
+          <label for="input_trait">What is your most desired trait?</label>
+          <select class="form-control" name="input_trait" id="input_trait">
+            <option>Loyalty</option>
+            <option>Beauty</option>
+            <option>Adaptability</option>
+            <option>Cunning</option>
+            <option>Strength</option>
+            <option>I just wanna be like, so tall</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="input_weapon">Choose your weapon(s)!</label>
+          <select multiple class="form-control" name="input_weapon" id="input_weapon">
+            <option>Sword</option>
+            <option>Axe</option>
+            <option>Bow and arrows</option>
+            <option>Dagger</option>
+            <option>Magic wand</option>
+            <option>Fists</option>
+            <option>A sick guitar</option>
+            <option>Shield</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
     </div>
   </body>
 </html>
